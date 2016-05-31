@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Samuel Belcastro - Contact Me</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+
+    <script src="https://use.fontawesome.com/daf6381bb3.js"></script>
+</head>
+
+<body>
+    <nav class="collapse">
+        <ul>
+            <li id="home"><a href="index.html">Home</a></li>
+            <li id="knowMe"><a href="#">Get to Know Me</a></li>
+            <li><i class="fa fa-envelope" aria-hidden="true"></i></li>
+            <li id="resume"><a href="resume.html">Resume</a></li>
+            <li id="contact"><a href="#">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <div class="jumbotron" style="background-image: url('images/daria.jpg');">
+        <header>
+            <h1>Let's Get In Touch</h1>
+            <hr class="small" />
+            <h2>Help Me Help You, and Let's See What <span id="title" style="color: #DD2C00;">We</span> Can Do</h2>
+        </header>
+    </div>
+
+    <article>
+        <h1>Contact Form</h1>
+        <hr />
+        <form action="php/mail.php">
+            <label hidden="hidden">Your Name</label>
+            <input type="text" class="long-input" placeholder="Your Name (ex. John Doe)"></input>
+            <label hidden="hidden">Your Email</label>
+            <input type="text" class="long-input" placeholder="Your Email"></input>
+            <label hidden="hidden">Your Message</label>
+            <textarea placeholder="Your Message ..."></textarea>
+            <input type="submit" />
+        </form>
+    </article>
+
+
+
+</body>
+
+</html>

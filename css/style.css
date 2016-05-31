@@ -1,0 +1,365 @@
+html,body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Navigation */
+nav{
+  width: 100%;
+  margin: auto;
+  background-color: white;
+}
+
+nav ul{
+  list-style-type: none;
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  float: center;
+}
+
+nav ul li{
+  display: inline-block;
+  padding: 14px 16px;
+  color: black;
+}
+
+nav ul li a{
+  display: block;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+nav ul li a:hover{
+  color: white;
+}
+
+ul.topnav li.icon{
+  display: none;
+}
+
+#home:hover{
+  background-color: #00C853;
+  color: white;
+}
+
+nav ul #knowMe:hover{
+  background-color: #0091EA;
+  color: white;
+}
+
+nav ul #resume:hover{
+  background-color: #FFAB00;
+  color: white;
+}
+
+nav ul #contact:hover{
+  background-color: #DD2C00;
+  color: white;
+}
+
+nav i{
+  color: black;
+}
+/* End navigation */
+
+/*General styles for the jumbotron (header image and header title) */
+.jumbotron{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+}
+
+.jumbotron header hr{
+  width: 100px;
+  height: 2px;
+  color: #fff; /* old IE */
+  background-color: #fff; /* Modern Browsers */
+}
+
+/*End general jumbotron styles*/
+
+/*General styles for the body links and link descriptions */
+article hr{
+  opacity: 0.5;
+}
+
+article a{
+  color: #000;
+  text-decoration: none;
+}
+
+article a:hover{
+  color: #000;
+  text-decoration: underline;
+}
+
+article h1 small{
+  opacity: 0.9;
+}
+
+.home-link{
+  height: 33%;
+}
+/*End general body styles*/
+
+/*General Resume Styles*/
+.resume-section{
+  list-style: none;
+}
+
+.printable-title{
+  display:none;
+}
+
+#skills ul{
+  margin: 0;
+  padding: 0;
+}
+
+#career ul{
+  margin: 0;
+  padding: 0;
+}
+
+.tag{
+  display: inline-block;
+  padding: 14px 16px;
+  margin-bottom: 1em;
+  border-radius: 20px;
+  background-color: #CFD8DC;
+}
+
+.project-box{
+  padding-right: 10px;
+  display: inline-block;
+  height: 200px;
+  width: 300px;
+}
+
+/*End General resume styles*/
+
+input, textarea{
+  height: 50px;
+  padding: 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-top: 1em;
+  float: left;
+  width: 100%;
+}
+
+textarea{
+  height: 150px;
+  margin-bottom: 1em;
+}
+
+/*Specific styles for a responsiveness*/
+/* For screens 1200px and wider */
+@media screen and (min-width: 1200px){
+  .jumbotron header{
+    padding: 125px 0;
+  }
+
+  .jumbotron header h2 #title-container{
+    width: 210px;
+    box-sizing: border-box;
+    text-align: left;
+    display: inline-block;
+  }
+
+  article{
+    color: black;
+    padding: 40px 200px;
+  }
+
+  .box{
+    box-sizing: border-box;
+    padding: 15px 20px;
+  }
+
+  .box-date{
+    width: 300px;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 1em 0;
+  }
+
+  .box-desc{
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0 2em;
+    vertical-align: top;
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+  }
+
+}
+
+/* For screens between 768px and 1200px */
+@media screen and (min-width: 768px) and (max-width: 1200px){
+  .jumbotron header{
+    padding: 125px 0;
+  }
+
+  .jumbotron header h2 #title-container{
+    width: 210px;
+    box-sizing: border-box;
+    text-align: left;
+    display: inline-block;
+  }
+
+  article{
+    color: black;
+    padding: 40px 100px;
+  }
+
+  .portfolio-item-container{
+    width: 100%;
+    height: 400px;
+  }
+
+  #print-message{
+    display: none;
+  }
+}
+
+/* For screens 320px - 768px */
+@media screen and (min-width: 320px) and (max-width: 768px){
+  nav ul li{
+    display: block;
+    padding: 14px 16px;
+  }
+
+  .jumbotron header{
+    padding: 100px 25px;
+  }
+
+  .jumbotron header h2 #title-container{
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  article{
+    color: black;
+    padding: 40px 75px;
+  }
+
+  #print-message{
+    display: none;
+  }
+
+  .work-box{
+    box-sizing: border-box;
+  }
+
+  .work-date{
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+  }
+
+  .work-desc{
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+  }
+
+  .portfolio-item-container{
+    width: 100%;
+    height: 400px;
+  }
+}
+
+/* For screens less than 320px*/
+@media screen and (max-width: 320px){
+  nav ul li{
+    display: block;
+    padding: 14px 16px;
+  }
+
+  .jumbotron header{
+    padding: 100px 25px;
+  }
+
+  .jumbotron header h2 #title-container{
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  article{
+    color: black;
+    padding: 10px 35px;
+  }
+
+  #print-message{
+    display: none;
+  }
+
+  .work-box{
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .work-date{
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .work-desc{
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+  }
+
+  .portfolio-item-container{
+    width: 100%;
+  }
+}
+
+/*Printer Friendly Area*/
+@media print {
+   .jumbotron, nav {display: none;}
+
+    article {
+     font-family: Arial;
+     display:block;
+   }
+
+  .printable-title{
+    display: block;
+    text-align: center;
+  }
+
+  #projects{
+    display: none;
+  }
+
+  #print-message{
+    display: none;
+  }
+
+ .tag{
+      text-decoration: underline;
+      padding: 0;
+      margin-right: 1em;
+   }
+
+}

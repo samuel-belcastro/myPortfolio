@@ -109,6 +109,10 @@ article h1 small{
   opacity: 0.9;
 }
 
+p a{
+  text-decoration: underline;
+}
+
 .home-link{
   height: 33%;
 }
@@ -186,27 +190,6 @@ textarea{
     padding: 40px 200px;
   }
 
-  .box{
-    box-sizing: border-box;
-    padding: 15px 20px;
-  }
-
-  .box-date{
-    width: 300px;
-    display: inline-block;
-    text-align: center;
-    box-sizing: border-box;
-    margin: 1em 0;
-  }
-
-  .box-desc{
-    box-sizing: border-box;
-    display: inline-block;
-    padding: 0 2em;
-    vertical-align: top;
-    border-left: 1px solid rgba(0, 0, 0, 0.5);
-  }
-
 }
 
 /* For screens between 768px and 1200px */
@@ -225,15 +208,6 @@ textarea{
   article{
     color: black;
     padding: 40px 100px;
-  }
-
-  .portfolio-item-container{
-    width: 100%;
-    height: 400px;
-  }
-
-  #print-message{
-    display: none;
   }
 }
 
@@ -257,33 +231,6 @@ textarea{
     color: black;
     padding: 40px 75px;
   }
-
-  #print-message{
-    display: none;
-  }
-
-  .work-box{
-    box-sizing: border-box;
-  }
-
-  .work-date{
-    display: inline-block;
-    text-align: center;
-    box-sizing: border-box;
-    float: left;
-  }
-
-  .work-desc{
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: top;
-    border-left: 1px solid rgba(0, 0, 0, 0.5);
-  }
-
-  .portfolio-item-container{
-    width: 100%;
-    height: 400px;
-  }
 }
 
 /* For screens less than 320px*/
@@ -306,32 +253,6 @@ textarea{
     color: black;
     padding: 10px 35px;
   }
-
-  #print-message{
-    display: none;
-  }
-
-  .work-box{
-    box-sizing: border-box;
-    margin: 0 auto;
-  }
-
-  .work-date{
-    display: inline-block;
-    text-align: center;
-    box-sizing: border-box;
-  }
-
-  .work-desc{
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: top;
-    border-left: 1px solid rgba(0, 0, 0, 0.5);
-  }
-
-  .portfolio-item-container{
-    width: 100%;
-  }
 }
 
 /*Printer Friendly Area*/
@@ -349,10 +270,6 @@ textarea{
   }
 
   #projects{
-    display: none;
-  }
-
-  #print-message{
     display: none;
   }
 

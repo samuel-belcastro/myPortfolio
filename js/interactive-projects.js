@@ -1,26 +1,46 @@
 $( document ).ready( function() {
 
+  var colors = {
+    Amber : "#FFAB00",
+    Blue : "#2962FF",
+    Cyan : "#00B8D4",
+    DeepOrange : "#DD2C00",
+    DeepPurple : "#6200EA",
+    Green : "#00C853",
+    Indigo : "#304FFE",
+    LightBlue : "#0091EA",
+    Lime : "#AEEA00",
+    Orange : "#FF6D00",
+    Pink : "#C51162",
+    Purple : "#AA00FF",
+    Red : "#D50000",
+    Teal : "#00BFA5",
+    Yellow : "#FFD600"
+  }
+
+  var colorArray = [colors.Amber, colors.Blue, colors.Cyan, colors.DeepOrange, colors.DeepPurple, colors.Green, colors.Indigo, colors. LightBlue, colors.Lime, colors.Orange, colors.Pink, colors.Purple, colors.Red, colors.Teal, colors.Yellow];
+
   function get_public_repos()
   {
 
     $( '#github-public-repos' ).html( "" );
-    var html = "<h2>Github Public Projects</h2>";
+    var html = "<h1>Github Public Projects</h1>";
 
     $.ajax( {
       	url : "https://api.github.com/users/samuel-belcastro/repos",
       	dataType : "jsonp",
       	success : function ( returndata ) {
         	$.each( returndata.data, function ( i, item ) {
-          	html += '<li>' +
-            	'<h3><a href="' + this.html_url + '">' + this.name.replace(/\-/g, " ") + '</a></h3>' +
-            	'<ul>' +
-            	'<li>' + 'Description: ' + this.description + '</li>' +
-            	'<li>' + 'Language: ' + this.language + '</li>' +
-            	'<li>' + 'Updated: ' + this.updated_at + '</li>' +
-            	'<li>' + 'Owner: ' + this.owner.login + '</li>' +
-            	'</ul>' +
-            	'</li>';
-
+            j = Math.floor((Math.random() * (colorArray.length - 1)));
+          	html += '<div class="project-container">' +
+            	'<div class="project-title" id="' + this.name + '" style="background-color: ' + colorArray[j] + '">' + this.name.replace(/\-/g, " ") + '</div>' +
+              '<div class="project-desc" id="' + this.name + '2">' +
+            	'<p>' + 'Description: ' + this.description + '</p>' +
+            	'<p>' + 'Language: ' + this.language + '</p>' +
+            	'<p>' + 'Updated: ' + this.updated_at + '</p>' +
+            	'<p>' + 'Owner: ' + this.owner.login + '</p>' +
+              '</div>' +
+            	'</div>';
         	} );
           html += '<hr />';
         $( '#github-public-repos' ).append( html );
@@ -28,6 +48,16 @@ $( document ).ready( function() {
        });
 
     }
+
+    $(document.body).click(function(event) {
+      clicked = event.target;
+
+      var id = "#" + clicked.id + "2";
+      if($(id).css('display') === 'none')
+        $(id).slideDown();
+      else
+        $(id).slideUp();
+    });
 
     get_public_repos()
 

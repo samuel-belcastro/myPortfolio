@@ -167,8 +167,30 @@ input, textarea{
 }
 
 textarea{
-  height: 150px;
   margin-bottom: 1em;
+}
+
+.project-container{
+
+  display: inline-block;
+  background-color: #fff;
+  width: 33.33333333%;
+  box-sizing: border-box;
+}
+
+.project-title{
+  text-align: center;
+  margin: 0 1em 1em 1em;
+  padding: 14px 16px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: white;
+}
+
+.project-desc{
+  margin: 1em;
+  display: none;
 }
 
 /*Specific styles for a responsiveness*/

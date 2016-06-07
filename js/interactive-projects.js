@@ -27,19 +27,20 @@ $( document ).ready( function() {
     var html = "<h1>Github Public Projects <small>(Click on a project to learn more!)</small></h1>";
 
     $.ajax( {
-      	url : "https://api.github.com/users/samuel-belcastro/repos",
+      	url : "https://api.github.com/users/samuel-belcastro/repos?access_token=a58ea8d98cd47302c0b28ee1fba5e1a9d3a329ca",
       	dataType : "jsonp",
       	success : function ( returndata ) {
           console.log(tag);
         	$.each( returndata.data, function ( i, item ) {
-
+            var date = new Date(this.updated_at);
+            var stringDate = date.toString();
             j = Math.floor((Math.random() * (colorArray.length - 1)));
           	html += '<div class="project-container">' +
             	'<div class="project-title" id="' + this.name + '" style="background-color: ' + colorArray[j] + '">' + this.name.replace(/\-/g, " ") + '</div>' +
               '<div class="project-desc" id="' + this.name + '2">' +
             	'<p>' + 'Description: ' + this.description + '</p>' +
             	'<p>' + 'Language: ' + this.language + '</p>' +
-            	'<p>' + 'Updated: ' + this.updated_at + '</p>' +
+            	'<p>' + 'Updated: ' + stringDate.substring(0,15) + '</p>' +
             	'<p>' + 'Owner: ' + this.owner.login + '</p>' +
               '</div>' +
             	'</div>';
@@ -55,8 +56,9 @@ $( document ).ready( function() {
     $(document.body).click(function(event) {
       clicked = event.target;
 
-      if(clicked.classList[0] === "tag")
-        get_public_repos($(event.target).text());
+
+      //if(clicked.classList[0] === "tag")
+        //get_public_repos($(event.target).text());
 
       //Sliding descriptions
       var descId = "#" + clicked.id + "2";

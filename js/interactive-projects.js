@@ -20,17 +20,19 @@ $( document ).ready( function() {
 
   var colorArray = [colors.Amber, colors.Blue, colors.Cyan, colors.DeepOrange, colors.DeepPurple, colors.Green, colors.Indigo, colors. LightBlue, colors.Lime, colors.Orange, colors.Pink, colors.Purple, colors.Red, colors.Teal, colors.Yellow];
 
-  function get_public_repos()
+  function get_public_repos(tag)
   {
 
     $( '#github-public-repos' ).html( "" );
-    var html = "<h1>Github Public Projects</h1>";
+    var html = "<h1>Github Public Projects <small>(Click on a project to learn more!)</small></h1>";
 
     $.ajax( {
       	url : "https://api.github.com/users/samuel-belcastro/repos",
       	dataType : "jsonp",
       	success : function ( returndata ) {
+          console.log(tag);
         	$.each( returndata.data, function ( i, item ) {
+
             j = Math.floor((Math.random() * (colorArray.length - 1)));
           	html += '<div class="project-container">' +
             	'<div class="project-title" id="' + this.name + '" style="background-color: ' + colorArray[j] + '">' + this.name.replace(/\-/g, " ") + '</div>' +
@@ -41,7 +43,8 @@ $( document ).ready( function() {
             	'<p>' + 'Owner: ' + this.owner.login + '</p>' +
               '</div>' +
             	'</div>';
-        	} );
+            } );
+
           html += '<hr />';
         $( '#github-public-repos' ).append( html );
        } // close success handler
@@ -52,11 +55,19 @@ $( document ).ready( function() {
     $(document.body).click(function(event) {
       clicked = event.target;
 
-      var id = "#" + clicked.id + "2";
-      if($(id).css('display') === 'none')
-        $(id).slideDown();
+      if(clicked.classList[0] === "tag")
+        get_public_repos($(event.target).text());
+
+      //Sliding descriptions
+      var descId = "#" + clicked.id + "2";
+      if($(descId).css('display') === 'none')
+      {
+        $(descId).slideDown();
+      }
       else
-        $(id).slideUp();
+      {
+        $(descId).slideUp();
+      }
     });
 
     get_public_repos()

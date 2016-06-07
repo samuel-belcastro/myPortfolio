@@ -121,6 +121,7 @@ p a{
 /*General Resume Styles*/
 .resume-section{
   list-style: none;
+  margin-bottom: 1em;
 }
 
 .printable-title{
@@ -145,13 +146,6 @@ p a{
   background-color: #CFD8DC;
 }
 
-.project-box{
-  padding-right: 10px;
-  display: inline-block;
-  height: 200px;
-  width: 300px;
-}
-
 /*End General resume styles*/
 
 input, textarea{
@@ -171,26 +165,31 @@ textarea{
 }
 
 .project-container{
-
+  position: relative;
+  vertical-align: top;
   display: inline-block;
   background-color: #fff;
-  width: 33.33333333%;
   box-sizing: border-box;
+  margin-bottom: 1em;
 }
 
 .project-title{
   text-align: center;
-  margin: 0 1em 1em 1em;
+  margin-right: 1em;
   padding: 14px 16px;
   border-bottom: 1px solid transparent;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-radius: 2px;
   color: white;
 }
 
 .project-desc{
-  margin: 1em;
+  padding: 0 1em 0 1em;
+  box-sizing: border-box;
+  border-radius: 2px;
+  margin-right: 1em;
   display: none;
+  background-color: white;
+  opacity: .8;
 }
 
 /*Specific styles for a responsiveness*/
@@ -212,6 +211,10 @@ textarea{
     padding: 40px 200px;
   }
 
+  .project-container{
+    width: 33.33333333%;
+  }
+
 }
 
 /* For screens between 768px and 1200px */
@@ -230,6 +233,10 @@ textarea{
   article{
     color: black;
     padding: 40px 100px;
+  }
+
+  .project-container{
+    width: 33.33333333%;
   }
 }
 
@@ -253,6 +260,10 @@ textarea{
     color: black;
     padding: 40px 75px;
   }
+
+  .project-container{
+    width: 100%;
+  }
 }
 
 /* For screens less than 320px*/
@@ -274,6 +285,11 @@ textarea{
   article{
     color: black;
     padding: 10px 35px;
+  }
+
+  .project-container{
+    width: 100%;
+    margin: 0 0 1em 0;
   }
 }
 
